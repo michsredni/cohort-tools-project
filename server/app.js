@@ -1,7 +1,6 @@
-const express = require("express");
-const morgan = require("morgan");
+
 const cookieParser = require("cookie-parser");
-const cors = require("cors")
+
 const mongoose = require("mongoose")
 
 
@@ -11,17 +10,14 @@ const Cohort = require("./models/Cohort.model.js")
 const Student = require("./models/Student.model.js")
 
 // INITIALIZE EXPRESS APP - https://expressjs.com/en/4x/api.html#express
+const express = require("express");
 const app = express();
 
+const config = require("./config")
+config(app)
+// pte de hacerse mañana
+// const indexRouter = require("./routes/index.js")
 
-// MIDDLEWARE
-// Research Team - Set up CORS middleware here:
-app.use(cors()) // {origin: [" poner URL aca "]}
-app.use(express.json());
-app.use(morgan("dev"));
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 
 mongoose

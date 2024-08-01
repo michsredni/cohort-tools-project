@@ -72,7 +72,7 @@ app.get("/api/students", async (req,res,next) => {
 app.get("/api/students/cohort/:cohortId", async (req,res,next) => {
   
   try {
-    const studentsCohort = await Student.findById(req.params.cohortId)
+    const studentsCohort = await Student.find({cohort: req.params.cohortId})
     res.status(200).json(studentsCohort)
     console.log(studentsCohort)
   } catch (error) {

@@ -11,7 +11,6 @@ app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
-
 }
 
-module.exports = config
+module.exports = config;

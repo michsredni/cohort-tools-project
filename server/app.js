@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+require("./db")
+
 const cookieParser = require("cookie-parser");
 
 // STATIC DATA

@@ -95,9 +95,9 @@ router.post("/login", async (req, res, next) => {
 // GET "/api/auth/verify" => validar el token (existencia, autenticidad y validez)
 router.get("/verify", tokenValidation, (req, res, next) => {
 
-    console.log(req.payload) 
+    console.log(req.payload) //esto es para que el BACKEND sepa quien es el dueño del token
   
-    res.status(200).json(req.payload) 
+    res.status(200).json(req.payload) //esto es para que el FRONTEND sepa quien es el dueño del token
   
   })
 

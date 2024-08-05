@@ -22,6 +22,7 @@ function StudentCreateForm({ cohortId, cohortName, callback, closeCallback }) {
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
+    console.log(student)
     e.preventDefault();
     const requestBody = { ...student, cohort: cohortId };
 

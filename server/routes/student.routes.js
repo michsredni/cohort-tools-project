@@ -14,12 +14,14 @@ router.post("/", async (req, res, next) => {
       email: req.body.email,
       phone: req.body.phone,
       linkedinUrl: req.body.linkedinUrl,
-      languages: [req.body.languages],
+      languages: req.body.languages,
       program: req.body.program,
       background: req.body.background,
       image: req.body.image,
-      cohort: { type: Schema.Types.ObjectId },
+      cohort: req.body.cohort,
       projects: req.body.projects,
+    }, {
+      new: true
     });
     res.status(201).json({ message: "Student data created" });
   } catch (error) {
